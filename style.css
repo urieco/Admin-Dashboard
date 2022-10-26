@@ -1,0 +1,312 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+.dashboard,
+.sidebar,
+.menu,
+.menu-icon,
+.content-area,
+.header-container,
+.content {
+    display: flex;
+}
+
+.sidebar {
+    color: white;
+    background-color: #0284C7;
+    font-size: 1rem;
+    font-weight: 500;
+    font-stretch: condensed;
+    letter-spacing: 0.01rem;
+    line-height: 2;
+    /* To stretch the height to 100% of all content in html */
+    min-height: 100%;
+    padding: 1.5em 5em 0 1.5em;
+    flex-direction: column;
+}
+
+.logo>img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo:hover,
+.logo>img:hover {
+    cursor: pointer;
+}
+
+.menu-icon {
+    padding-top: 0.75em;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.menu-icon > svg path:hover {
+    fill: #cbd5e1;
+    cursor: pointer;
+}
+
+.menu-item {
+    font-size: 1.2rem;
+    line-height: 2.5;
+    padding-left: 0.75rem;
+    margin-bottom: 3em;
+}
+
+.menu-item > div:hover {
+    color: #cbd5e1;
+    cursor: pointer;
+}
+
+.header-container {
+    font-weight: bold;
+    padding: 2em 2em;
+    justify-content: space-between;
+}
+
+.header-container svg {
+    flex: 1 0 auto;
+    transform: scale(0.9);
+}
+
+.searchbar-area,
+.user-top-right-corner {
+    display: flex;
+}
+
+#searchbar {
+    appearance: none;
+    background-color: #cbd5e1;
+    width: 40vw;
+    height: 2em;
+    padding: 0 1em;
+    border: none;
+    border-radius: 10em;
+    margin: 0 1em;
+    flex-grow: 1;
+}
+
+#searchbar:hover {
+    background-color: #E2E8F0;
+}
+
+#searchbar:active,
+#searchbar:focus {
+    background-color: #f1f5f9;
+    border: 1px solid black;
+}
+
+.user-top-right-corner {
+    position: relative;
+    left: -6%;
+}
+
+.profile-picture {
+    background-color: #FACC15;
+    padding: 0.5em;
+    border-radius: 15em;
+    margin: -0.5em 1em;
+}
+
+.username {
+    letter-spacing: -1px;
+    flex: 0 0 auto;
+}
+
+.greeting {
+    margin-top: -1em;
+    display: flex;
+}
+
+.greeting>.profile-picture {
+    margin: auto;
+    transform: scale(1.4);
+}
+
+pre {
+    margin-left: 1.75em;
+}
+
+.greeting .handle {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.interactive-buttons {
+    margin: 0 1em;
+    /* Has to use 'display:flex;' to stop the button from pushing each other down to another line from "margin" */
+    display: flex;
+}
+
+.interactive-buttons>button {
+    color: white;
+    background-color: #0284C7;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5em 1.5em;
+    border: none;
+    border-radius: 1.5em;
+    margin-right: 1.75em;
+}
+
+.interactive-buttons>button:hover {
+    background-color: #0597E1;
+}
+
+.interactive-buttons>button:active {
+    box-shadow: inset 0 0 5px 1px black;
+    transform: scale(0.9);
+}
+
+.content-area {
+    background-color: #cbd5e1;
+    flex-flow: column wrap;
+}
+
+.header {
+    background-color: #f8fafc;
+    box-shadow: 0 0.25em 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    padding: 1em 1.5em;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 1.5em;
+}
+
+.content h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 2em 0 1em;
+}
+
+.projects {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
+    gap: 1.5em;
+}
+
+.your-projects h3 {
+    font-size: 1.05rem;
+    align-self: center;
+}
+
+.projects > div,
+.announcement-box, 
+.trending-box {
+    background-color: #f8fafc;
+    border: none;
+    border-radius: 0.5em;
+    padding: 1.5em 1.5em;
+    box-shadow: 0.25em 0.5em 0.5em 0 rgba(0, 0, 0, 0.3);
+}
+
+.projects > div {
+    padding-bottom: 1.25em;
+    border-left: 0.5em solid #eab308;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+}
+
+.projects span {
+    text-align: end;
+    align-self: center;
+}
+
+.project-buttons {
+    width: 1.5em;
+}
+
+.projects span::before {
+    content: "";
+    width: 2.25em;
+    height: 2.25em;
+    display: inline-block;
+    background: url(./image/star-plus-outline.svg) no-repeat 0.35em 0.7em;
+    background-size: 70%;
+}
+
+.projects span::after {
+    content: "";
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    background: url(./image/share-variant-outline.svg) no-repeat 0.35em 0.7em;
+    background-size: 70%;
+}
+
+/* Both contents of ::before and ::after got activated simultanenously, so we
+have to settle for JS. */
+.project-buttons:hover,
+.projects span:hover::before,
+.projects span:hover::after {
+    filter: opacity(0.5);
+}
+
+.announcement-box > div {
+    padding-bottom: 1.25em;
+    border-bottom: 1px solid #cbd5e1;
+    margin: 1em 0.5em;
+}
+
+.announcement-box > div:last-child {
+    padding-bottom: 0.5em;
+    border: none;
+    margin-bottom: 0;
+}
+
+.people-you-may-know {
+    margin-bottom: 1em;
+    display: flex;
+    gap: 1em;
+}
+
+.people-you-may-know:last-child {
+    margin-bottom: 0;
+}
+
+.people-you-may-know > .profile-picture {
+    padding: 1.25em;
+    margin: 0;
+    border-radius: 10em;
+    flex: 0 0 auto;
+    transform: scale(1.05);
+}
+
+.handle > p {
+    font-weight: 400;
+    /* prevent the text from breaking into another line */
+    white-space: nowrap;
+}
+
+.handle {
+    font-weight: 500;
+}
+
+.tegan {
+    background-color: #bae6fd;
+}
+
+.kendall {
+    background-color: #475569;
+}
+
+.alex {
+    background-color: #fca5a5;
+}
